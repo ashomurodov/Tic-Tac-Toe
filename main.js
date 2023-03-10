@@ -87,6 +87,7 @@ xyBox.forEach((item, idx) => {
       gamerTurn.textContent = "O - o'yinchining navbati!";
       checkWinner(X);
       number++;
+      message.textContent = `Good luck! 😊`;
     } else if (
       item.textContent == "" &&
       number % 2 !== 0 &&
@@ -97,8 +98,12 @@ xyBox.forEach((item, idx) => {
       gamerTurn.textContent = "X - o'yinchining navbati!";
       checkWinner(O);
       number++;
+      message.textContent = `Good luck! 😊`;
     } else if (selected == false) {
       message.textContent = "Iltimos o'yinchi pozitsiyangizni tanlang!!!";
+    } else if (item.textContent !== "" && gaming) {
+      //   message.textContent = `Keyingi Raundga o'ting!!!`;
+      message.textContent = `Bitta katakka bir marta bosing!`;
     } else {
       message.textContent = `Keyingi Raundga o'ting!!!`;
     }
