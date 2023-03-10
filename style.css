@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+:root {
+  --main-color: hsl(40, 100%, 14%);
+}
+
+body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.message-box {
+  width: 400px;
+  height: 600px;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.xo-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.xo-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 7px;
+  background-color: beige;
+  border: 4px solid #616161;
+  font-size: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease transform;
+}
+
+.message,
+.gamerTurn {
+  color: rgb(52, 15, 15);
+  font-size: 30px;
+  font-family: "Dank Mono";
+  text-align: center;
+}
+
+.gamerTurn {
+  color: rgb(19, 10, 10);
+  font-size: 36px;
+  text-align: center;
+}
+
+button {
+  border: none;
+  background-color: rgb(52, 105, 212);
+  color: #fff;
+  border-radius: 7px;
+  font-size: 18px;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: 0.4s ease transform;
+}
+
+button:active {
+  transform: scale(0.93);
+}
+
+.xo-box:active {
+  transform: scale(0.98);
+}
+.container {
+  width: 600px;
+  height: 590px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.center {
+  border-top: 4px solid var(--main-color);
+  border-bottom: 4px solid var(--main-color);
+  height: 204px;
+  width: 100%;
+}
+
+.box {
+  width: 34%;
+  height: 196px;
+  font-size: 60px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  background-color: rgba(0, 255, 255, 0.064);
+}
+
+.center-box {
+  border-left: 4px solid var(--main-color);
+  border-right: 4px solid var(--main-color);
+}
+
+.round-counter {
+  padding: 18px 10px;
+  width: 200px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  background-color: rgb(88, 88, 96);
+  color: white;
+  border-radius: 8px;
+}
+
+.round-counter button {
+  background-color: white;
+  color: #ef2222;
+}
+.xyScores {
+  display: flex;
+  gap: 20px;
+}
+
+.winnerWindow {
+  font-size: 40px;
+  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(90deg, #56e9f4, #08ff88);
+  width: 100%;
+  height: 100vh;
+}
+
+.winnerWindow button {
+  font-size: 40px;
+}
+
+.hidden {
+  display: none;
+}

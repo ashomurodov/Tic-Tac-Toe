@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link
+      rel="icon"
+      href="./190322_game_tac_tic_toe_icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="box"></div>
+        <div class="box center-box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="row center">
+        <div class="box"></div>
+        <div class="box center-box"></div>
+        <div class="box"></div>
+      </div>
+      <div class="row">
+        <div class="box"></div>
+        <div class="box center-box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+    <div class="message-box">
+      <h1 class="main-text">XO game</h1>
+      <div class="xo-container">
+        <div class="xo-box" id="X">X</div>
+        <div class="xo-box" id="O">O</div>
+      </div>
+      <p class="message">O'yinchi pozitsiyangizni tanlang</p>
+      <p class="gamerTurn">😴</p>
+      <button id="refresh">Refresh Game <br>(esc)</button>
+
+      <div class="round-counter">
+        <p class="roundCounter">Round-1</p>
+        <div class="xyScores">
+          <div class="xScores">X - 0</div>
+          <div class="oScores">O - 0</div>
+        </div>
+        <button id="nextRound">next raund</button>
+      </div>
+    </div>
+
+    <div class="winnerWindow hidden">
+      <h1 class="winnerPlayer">X Gamer Win!!!</h1>
+      <button id="NewGame">New Game <br>(esc)</button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
