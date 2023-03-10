@@ -85,9 +85,10 @@ xyBox.forEach((item, idx) => {
     if (number % 2 == 0 && item.textContent == "" && gaming && selected) {
       item.textContent = "X";
       gamerTurn.textContent = "O - o'yinchining navbati!";
-      checkWinner(X);
       number++;
       message.textContent = `Good luck! 😊`;
+      checkWinner(X);
+      //   avtoFill();
     } else if (
       item.textContent == "" &&
       number % 2 !== 0 &&
@@ -96,9 +97,10 @@ xyBox.forEach((item, idx) => {
     ) {
       item.textContent = "O";
       gamerTurn.textContent = "X - o'yinchining navbati!";
-      checkWinner(O);
       number++;
       message.textContent = `Good luck! 😊`;
+      checkWinner(O);
+      //   avtoFill();
     } else if (selected == false) {
       message.textContent = "Iltimos o'yinchi pozitsiyangizni tanlang!!!";
     } else if (item.textContent !== "" && gaming) {
@@ -139,6 +141,7 @@ function checkWinner(XO) {
       checkAllRoundsWinner();
       gaming = false;
       roundEnd = true;
+      break;
     } else {
       checkDraw();
     }
@@ -153,7 +156,7 @@ function checkDraw() {
     }
   });
 
-  if (counter == 9) {
+  if (counter == 9 && roundEnd == false) {
     gamerTurn.textContent = "Afsuski hech kim yuta olmadi ☹️";
   }
 }
@@ -176,11 +179,30 @@ function nextRoundGame() {
 }
 
 function checkAllRoundsWinner() {
+  console.log(roundCount);
   if (roundCount == 3 || xScore == 2 || oScore == 2) {
     winnerPlayer = xScore > oScore ? xWin : xScore == oScore ? draw : oWin;
+    console.log(winnerPlayer);
     winnerPlayerText.textContent = winnerPlayer;
     container.classList.add("hidden");
     messageBox.classList.add("hidden");
     winnerWindow.classList.remove("hidden");
   }
 }
+
+// let randomNumber;
+
+// function avtoFill() {
+//   let notFilledBoxIdx = [];
+//   randomNumber = Math.trunc(Math.random() * notFilledBoxIdx.length);
+//   xyBox.forEach((item, idx) => {
+//     if (item.textContent == "") {
+//       notFilledBoxIdx.push(idx);
+//     }
+//   });
+//   xyBox[notFilledBoxIdx[randomNumber]].textContent =
+//     number % 2 == 0 ? "X" : "O";
+//   checkWinner();
+//   console.log(notFilledBoxIdx[randomNumber]);
+//   number++;
+// }
