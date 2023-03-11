@@ -114,7 +114,7 @@ xyBox.forEach((item, idx) => {
   });
 });
 
-const winnerPositons = [
+const winnerPositions = [
   [0, 1, 2], // true
   [0, 3, 6], // true
   [3, 4, 5], // true
@@ -126,7 +126,7 @@ const winnerPositons = [
 ];
 
 function checkWinner(XO) {
-  for (let [p1, p2, p3] of winnerPositons) {
+  for (let [p1, p2, p3] of winnerPositions) {
     if (
       xyBox[p1].textContent == XO &&
       xyBox[p2].textContent == XO &&
