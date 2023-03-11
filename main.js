@@ -13,6 +13,7 @@ const nextRound = document.getElementById("nextRound");
 const roundCounter = document.querySelector(".roundCounter");
 const winnerWindow = document.querySelector(".winnerWindow");
 const winnerPlayerText = document.querySelector(".winnerPlayer");
+const hideModal = document.querySelector(".hidden-modal");
 let number,
   gaming,
   selected,
@@ -130,6 +131,10 @@ function checkWinner(XO) {
       xyBox[p2].textContent == XO &&
       xyBox[p3].textContent == XO
     ) {
+      xyBox[p1].style.backgroundColor = "#99ffd8";
+      xyBox[p2].style.backgroundColor = "#99ffd8";
+      xyBox[p3].style.backgroundColor = "#99ffd8";
+
       gamerTurn.textContent = `${XO} o'yinchi yutdi 🥳`;
       if (XO == "X") {
         xScore += 1;
@@ -167,7 +172,10 @@ function clear() {
   gaming = true;
   message.textContent = "O'yinchi pozitsiyangizni tanlang";
   gamerTurn.textContent = "😴";
-  xyBox.forEach((item) => (item.textContent = ""));
+  xyBox.forEach((item) => {
+    item.textContent = "";
+    item.style.backgroundColor = "white";
+  });
 }
 
 function nextRoundGame() {
@@ -189,6 +197,12 @@ function checkAllRoundsWinner() {
     winnerWindow.classList.remove("hidden");
   }
 }
+
+hideModal.addEventListener("click", () => {
+  container.classList.remove("hidden");
+  messageBox.classList.remove("hidden");
+  winnerWindow.classList.add("hidden");
+});
 
 // let randomNumber;
 
