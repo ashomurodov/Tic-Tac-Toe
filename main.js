@@ -26,7 +26,7 @@ let number,
 
 let xWin = "🥳 X player win this game 🥳";
 let oWin = "🥳 O player win this game 🥳";
-let draw = "Hech kim yuta olmadi ☹️";
+let draw = "Durrang";
 function init() {
   xScore = 0;
   oScore = 0;
@@ -57,12 +57,12 @@ function selectedOX(num, choise) {
 
 Xbox.addEventListener("click", () => {
   selectedOX(0, "X");
-  console.log(number);
+  // console.log(number);
 });
 
 Obox.addEventListener("click", () => {
   selectedOX(1, "O");
-  console.log(number);
+  // console.log(number);
 });
 
 document.addEventListener("keyup", (e) => {
@@ -83,7 +83,7 @@ const O = "O";
 
 xyBox.forEach((item, idx) => {
   item.addEventListener("click", () => {
-    console.log(gaming);
+    // console.log(gaming);
     if (number % 2 == 0 && item.textContent == "" && gaming && selected) {
       item.textContent = "X";
       gamerTurn.textContent = "O - o'yinchining navbati!";
@@ -165,6 +165,7 @@ function checkDraw() {
   if (counter == 9 && roundEnd == false) {
     gamerTurn.textContent = "Afsuski hech kim yuta olmadi ☹️";
     roundEnd = true;
+    checkAllRoundsWinner();
   }
 }
 
@@ -182,6 +183,7 @@ function clear() {
 }
 
 function nextRoundGame() {
+  console.log(roundCount);
   if (roundEnd == true && !endAllRounds) {
     clear();
     roundCount++;
@@ -192,7 +194,6 @@ function nextRoundGame() {
 }
 
 function checkAllRoundsWinner() {
-  console.log(roundCount);
   if (roundCount == 3 || xScore == 2 || oScore == 2) {
     winnerPlayer = xScore > oScore ? xWin : xScore == oScore ? draw : oWin;
     console.log(winnerPlayer);
