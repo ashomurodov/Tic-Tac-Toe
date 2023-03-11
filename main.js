@@ -103,7 +103,7 @@ xyBox.forEach((item, idx) => {
       message.textContent = `Good luck! 😊`;
       checkWinner(O);
       //   avtoFill();
-    } else if (selected == false) {
+    } else if (!selected) {
       message.textContent = "Iltimos o'yinchi pozitsiyangizni tanlang!!!";
     } else if (item.textContent !== "" && gaming) {
       //   message.textContent = `Keyingi Raundga o'ting!!!`;
@@ -132,9 +132,10 @@ function checkWinner(XO) {
       xyBox[p2].textContent == XO &&
       xyBox[p3].textContent == XO
     ) {
-      xyBox[p1].style.backgroundColor = "#99ffd8";
-      xyBox[p2].style.backgroundColor = "#99ffd8";
-      xyBox[p3].style.backgroundColor = "#99ffd8";
+      const boxes = [p1, p2, p3];
+      for (let i = 0; i < boxes.length; i++) {
+        xyBox[boxes[i]].style.backgroundColor = "#99ffd8";
+      }
 
       gamerTurn.textContent = `${XO} o'yinchi yutdi 🥳`;
       if (XO == "X") {
@@ -162,10 +163,11 @@ function checkDraw() {
     }
   });
 
-  if (counter == 9 && roundEnd == false) {
+  if (counter == 9 && !roundEnd) {
     gamerTurn.textContent = "Afsuski hech kim yuta olmadi ☹️";
     roundEnd = true;
     checkAllRoundsWinner();
+    gaming = false;
   }
 }
 
@@ -184,11 +186,12 @@ function clear() {
 
 function nextRoundGame() {
   console.log(roundCount);
-  if (roundEnd == true && !endAllRounds) {
+  if (roundEnd && !endAllRounds) {
     clear();
+    gaming = true;
     roundCount++;
     roundCounter.textContent = `Round-${roundCount}`;
-  } else if (endAllRounds == true) {
+  } else if (endAllRounds) {
     message.textContent = `O'yin yakunlandi yangi o'yin boshlang!`;
   }
 }
@@ -202,6 +205,7 @@ function checkAllRoundsWinner() {
     messageBox.classList.add("hidden");
     winnerWindow.classList.remove("hidden");
     endAllRounds = true;
+    gaming = false;
   }
 }
 
