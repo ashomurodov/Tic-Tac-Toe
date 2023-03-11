@@ -21,7 +21,8 @@ let number,
   oScore,
   roundCount,
   roundEnd,
-  winnerPlayer;
+  winnerPlayer,
+  endAllRounds;
 
 let xWin = "🥳 X player win this game 🥳";
 let oWin = "🥳 O player win this game 🥳";
@@ -170,6 +171,7 @@ function clear() {
   selected = false;
   roundEnd = false;
   gaming = true;
+  endAllRounds = false;
   message.textContent = "O'yinchi pozitsiyangizni tanlang";
   gamerTurn.textContent = "😴";
   xyBox.forEach((item) => {
@@ -179,10 +181,12 @@ function clear() {
 }
 
 function nextRoundGame() {
-  if (roundEnd == true) {
+  if (roundEnd == true && !endAllRounds) {
     clear();
     roundCount++;
     roundCounter.textContent = `Round-${roundCount}`;
+  } else if(endAllRounds==true){
+    message.textContent = `O'yin yakunlandi yangi o'yin boshlang!`
   }
 }
 
@@ -195,6 +199,7 @@ function checkAllRoundsWinner() {
     container.classList.add("hidden");
     messageBox.classList.add("hidden");
     winnerWindow.classList.remove("hidden");
+    endAllRounds = true;
   }
 }
 
