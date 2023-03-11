@@ -164,6 +164,7 @@ function checkDraw() {
 
   if (counter == 9 && roundEnd == false) {
     gamerTurn.textContent = "Afsuski hech kim yuta olmadi ☹️";
+    roundEnd = true;
   }
 }
 
@@ -185,8 +186,8 @@ function nextRoundGame() {
     clear();
     roundCount++;
     roundCounter.textContent = `Round-${roundCount}`;
-  } else if(endAllRounds==true){
-    message.textContent = `O'yin yakunlandi yangi o'yin boshlang!`
+  } else if (endAllRounds == true) {
+    message.textContent = `O'yin yakunlandi yangi o'yin boshlang!`;
   }
 }
 
