@@ -215,19 +215,4 @@ hideModal.addEventListener("click", () => {
   winnerWindow.classList.add("hidden");
 });
 
-// let randomNumber;
 
-// function avtoFill() {
-//   let notFilledBoxIdx = [];
-//   randomNumber = Math.trunc(Math.random() * notFilledBoxIdx.length);
-//   xyBox.forEach((item, idx) => {
-//     if (item.textContent == "") {
-//       notFilledBoxIdx.push(idx);
-//     }
-//   });
-//   xyBox[notFilledBoxIdx[randomNumber]].textContent =
-//     number % 2 == 0 ? "X" : "O";
-//   checkWinner();
-//   console.log(notFilledBoxIdx[randomNumber]);
-//   number++;
-// }
